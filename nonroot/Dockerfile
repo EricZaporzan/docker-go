@@ -3,6 +3,9 @@ FROM golang:1.8-alpine
 RUN apk update && apk upgrade && \
     apk add --no-cache bash git openssh
 
+RUN apk add nodejs=6.9.5-r1
+RUN npm install -g yarn
+
 RUN mkdir -p /go/src/app
 WORKDIR /go/src/app
 

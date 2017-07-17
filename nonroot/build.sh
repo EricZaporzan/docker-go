@@ -44,6 +44,23 @@ fi
 
 go build -tags $APP_ENV -o webapp
 
+cd client
+if [ -e dist ];
+then
+  rm -rf dist
+fi
+
+if [ -e node_modules ];
+then
+  rm -rf node_modules
+fi
+
+yarn install
+npm run build
+cd dist && ls && cd ..
+rm -rf node_modules
+cd ..
+
 cd /src
 rm -rf vendor
 chown -R nobody:nobody /src
