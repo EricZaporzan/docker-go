@@ -57,9 +57,7 @@ fi
 
 yarn install
 npm run build
-cd dist && ls && cd ..
 rm -rf node_modules
-cd ..
 
 cd /src
 rm -rf vendor
